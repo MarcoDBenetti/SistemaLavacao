@@ -86,4 +86,21 @@ public class MarcaDAO {
         }
         return retorno;
     }
+    
+    public Marca buscar(Marca marca) {
+        String sql = "SELECT * FROM marca WHERE id=?";
+        Marca retorno = new Marca();
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setInt(1, marca.getId());
+            ResultSet resultado = stmt.executeQuery();
+            if (resultado.next()) {
+                marca.setNome(resultado.getString("nome"));
+                retorno = marca;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(MarcaDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return retorno;
+    }
 }

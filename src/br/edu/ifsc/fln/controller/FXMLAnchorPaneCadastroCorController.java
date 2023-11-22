@@ -34,7 +34,7 @@ import javafx.stage.Stage;
  *
  * @author marco
  */
-public class FXMLAnchorPaneCadastrosCorController implements Initializable {
+public class FXMLAnchorPaneCadastroCorController implements Initializable {
      @FXML
     private AnchorPane anchorPaneInformacoes;
     
@@ -79,7 +79,7 @@ public class FXMLAnchorPaneCadastrosCorController implements Initializable {
     void handleBtnCadastrosCorAlterar(ActionEvent event) throws IOException {
         Cor cor = tableViewCadastrosCor.getSelectionModel().getSelectedItem();
         if (cor != null) {
-            boolean btnSalvarClicked = showFXMLAnchorPaneCadastrosCorDialog(cor);
+            boolean btnSalvarClicked = showFXMLAnchorPaneCadastroCorDialog(cor);
             if (btnSalvarClicked) {
                 corDAO.alterar(cor);
                 carregarTableViewCor();
@@ -107,7 +107,7 @@ public class FXMLAnchorPaneCadastrosCorController implements Initializable {
     @FXML
     void handleBtnCadastrosCorInserir(ActionEvent event) throws IOException {
         Cor cor = new Cor();
-        boolean btnSalvarClicked = showFXMLAnchorPaneCadastrosCorDialog(cor);
+        boolean btnSalvarClicked = showFXMLAnchorPaneCadastroCorDialog(cor);
         if (btnSalvarClicked) {
             corDAO.inserir(cor);
             carregarTableViewCor();
@@ -147,9 +147,9 @@ public class FXMLAnchorPaneCadastrosCorController implements Initializable {
 
     }
     
-    private boolean showFXMLAnchorPaneCadastrosCorDialog(Cor cor) throws IOException {
+    private boolean showFXMLAnchorPaneCadastroCorDialog(Cor cor) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(FXMLAnchorPaneCadastrosCorController.class.getResource("../view/FXMLAnchorPaneCadastrosCorDialog.fxml"));
+        loader.setLocation(FXMLAnchorPaneCadastroCorController.class.getResource("../view/FXMLAnchorPaneCadastroCorDialog.fxml"));
         AnchorPane page = (AnchorPane) loader.load();
         
         Stage dialogStage = new Stage();
@@ -157,7 +157,7 @@ public class FXMLAnchorPaneCadastrosCorController implements Initializable {
         Scene scene = new Scene(page);
         dialogStage.setScene(scene);
         
-        FXMLAnchorPaneCadastrosCorDialogController controller = loader.getController();
+        FXMLAnchorPaneCadastroCorDialogController controller = loader.getController();
         controller.setDialogStage(dialogStage);
         controller.setCor(cor);
         

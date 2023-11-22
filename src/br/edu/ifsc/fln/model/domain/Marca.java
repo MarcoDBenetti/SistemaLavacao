@@ -37,7 +37,7 @@ public class Marca {
 
     @Override
     public String toString() {
-        return "{" + "nome=" + nome + '}';
+        return getNome();
     }
     
     

@@ -22,9 +22,13 @@ import javafx.scene.layout.AnchorPane;
 public class FXMLVBoxMainAppController implements Initializable {
 
     @FXML
-    private MenuItem menuItemCadastrosCor;
+    private MenuItem menuItemCadastroCor;
     @FXML
-    private MenuItem menuItemCadastrosMarca;
+    private MenuItem menuItemCadastroMarca;
+    @FXML
+    private MenuItem menuItemCadastroModelo;
+    @FXML
+    private MenuItem menuItemCadastroVeiculo;
     @FXML
     private AnchorPane anchorPane;
 
@@ -37,15 +41,26 @@ public class FXMLVBoxMainAppController implements Initializable {
     }    
 
     @FXML
-    private void handleMenuItemCadastrosCor(ActionEvent event) throws IOException{
-        AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("../view/FXMLAnchorPaneCadastrosCor.fxml"));
+    private void handleMenuItemCadastroCor(ActionEvent event) throws IOException{
+        AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("../view/FXMLAnchorPaneCadastroCor.fxml"));
         anchorPane.getChildren().setAll(a);
     }
 
     @FXML
-    private void handleMenuItemCadastrosMarca(ActionEvent event) throws IOException {
-        AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("../view/FXMLAnchorPaneCadastrosMarca.fxml"));
+    private void handleMenuItemCadastroMarca(ActionEvent event) throws IOException {
+        AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("../view/FXMLAnchorPaneCadastroMarca.fxml"));
         anchorPane.getChildren().setAll(a);
     }
     
+    @FXML
+    void handleMenuItemCadastroModelo(ActionEvent event) throws IOException {
+        AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("../view/FXMLAnchorPaneCadastroModelo.fxml"));
+        anchorPane.getChildren().setAll(a);
+    }
+    
+    @FXML
+    void handleMenuItemCadastroVeiculo(ActionEvent event) throws IOException {
+        AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("../view/FXMLAnchorPaneCadastroVeiculo.fxml"));
+        anchorPane.getChildren().setAll(a);
+    }
 }

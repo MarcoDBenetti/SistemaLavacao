@@ -41,7 +41,7 @@ public class Cor {
 
     @Override
     public String toString() {
-        return "{" + "nome=" + nome + '}';
+        return getNome();
     }
 
 }

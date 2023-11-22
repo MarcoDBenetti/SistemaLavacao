@@ -86,4 +86,21 @@ public class CorDAO {
         }
         return retorno;
     }
+    
+    public Cor buscar(Cor cor) {
+        String sql = "SELECT * FROM cor WHERE id=?";
+        Cor retorno = new Cor();
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setLong(1, cor.getId());
+            ResultSet resultado = stmt.executeQuery();
+            if (resultado.next()) {
+                cor.setNome(resultado.getString("nome"));
+                retorno = cor;
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(CorDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return retorno;
+    }
 }

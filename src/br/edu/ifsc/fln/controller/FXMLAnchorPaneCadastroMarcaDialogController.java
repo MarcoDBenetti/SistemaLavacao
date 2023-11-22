@@ -21,7 +21,7 @@ import javafx.stage.Stage;
  *
  * @author marco
  */
-public class FXMLAnchorPaneCadastrosMarcaDialogController implements Initializable {
+public class FXMLAnchorPaneCadastroMarcaDialogController implements Initializable {
 
     @FXML
     private Button btnMarcaDialogCancelar;

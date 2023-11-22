@@ -12,13 +12,17 @@ public class Modelo {
     private int id;
     private String descricao;
     private Marca marca;
-
+    private Motor motor;
+    private ECategoria categoria = ECategoria.PADRAO;
+    
     public Modelo() {
+        this.createMotor();
     }
 
     public Modelo(String descricao, Marca marca) {
         this.descricao = descricao;
         this.marca = marca;
+        this.createMotor();
     }
 
     public int getId() {
@@ -47,8 +51,28 @@ public class Modelo {
 
     @Override
     public String toString() {
-        return "{" + "descricao=" + descricao + ", marca=" + marca + '}';
+        return getDescricao();
+    }
+
+    public Motor getMotor() {
+        return motor;
+    }
+
+    public void setMotor(Motor motor) {
+        this.motor = motor;
     }
     
+    private void createMotor(){
+        this.motor = new Motor();
+        this.motor.setModelo(this);
+    }
+
+    public ECategoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(ECategoria categoria) {
+        this.categoria = categoria;
+    }
     
 }

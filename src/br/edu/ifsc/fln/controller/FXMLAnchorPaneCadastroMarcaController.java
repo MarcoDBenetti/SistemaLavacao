@@ -34,7 +34,7 @@ import javafx.stage.Stage;
  *
  * @author marco
  */
-public class FXMLAnchorPaneCadastrosMarcaController implements Initializable {
+public class FXMLAnchorPaneCadastroMarcaController implements Initializable {
      @FXML
     private AnchorPane anchorPaneInformacoes;
     
@@ -149,7 +149,7 @@ public class FXMLAnchorPaneCadastrosMarcaController implements Initializable {
     
     private boolean showFXMLAnchorPaneCadastrosMarcaDialog(Marca marca) throws IOException {
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(FXMLAnchorPaneCadastrosMarcaController.class.getResource("../view/FXMLAnchorPaneCadastrosMarcaDialog.fxml"));
+        loader.setLocation(FXMLAnchorPaneCadastroMarcaController.class.getResource("../view/FXMLAnchorPaneCadastroMarcaDialog.fxml"));
         AnchorPane page = (AnchorPane) loader.load();
         
         Stage dialogStage = new Stage();
@@ -157,7 +157,7 @@ public class FXMLAnchorPaneCadastrosMarcaController implements Initializable {
         Scene scene = new Scene(page);
         dialogStage.setScene(scene);
         
-        FXMLAnchorPaneCadastrosMarcaDialogController controller = loader.getController();
+        FXMLAnchorPaneCadastroMarcaDialogController controller = loader.getController();
         controller.setDialogStage(dialogStage);
         controller.setMarca(marca);
         

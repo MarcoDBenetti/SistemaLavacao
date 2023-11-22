@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 /**
  *
  * @author marco
+ * V2 implementando modelo e veículo
  */
 public class MainApp extends Application {
     

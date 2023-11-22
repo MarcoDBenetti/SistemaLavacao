@@ -21,7 +21,7 @@ import javafx.stage.Stage;
  *
  * @author marco
  */
-public class FXMLAnchorPaneCadastrosCorDialogController implements Initializable {
+public class FXMLAnchorPaneCadastroCorDialogController implements Initializable {
 
     @FXML
     private Button btnCorDialogCancelar;
